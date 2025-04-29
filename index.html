@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat History Graph</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+    }
+    #controls {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 8px;
+    }
+    select {
+      padding: 5px;
+    }
+    #graph {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #hover-info {
+      position: absolute;
+      top: 50px;
+      left: 10px;
+      color: white;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      border-radius: 5px;
+      z-index: 20;
+    }
+    #node-info {
+      position: absolute;
+      top: 120px;
+      left: 10px;
+      color: white;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 200px;
+      z-index: 20;
+      white-space: pre-wrap;  /* Bu, mesajları daha düzgün gösterecek */
+      overflow-y: auto;       /* Uzun mesajlar için kaydırma ekler */
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <label for="monthSelect">Ay seç:</label>
+    <select id="monthSelect">
+      <option value="">Seç...</option>
+    </select>
+  </div>
+  <div id="graph"></div>
+  <div id="hover-info">Hover üzerinde bir node için bilgi göreceksiniz.</div>
+  <div id="node-info">Node üzerine tıklayınca burada mesajlar görünecek.</div>
+
+  <script src="https://unpkg.com/3d-force-graph"></script>
+  <script src="graph.js"></script>
+</body>
+</html>
